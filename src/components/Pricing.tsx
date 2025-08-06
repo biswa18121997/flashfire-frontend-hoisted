@@ -215,7 +215,7 @@ const Pricing = () => {
       description: "Most popular for mid-level professionals",
       paymentLink: "https://www.paypal.com/ncp/payment/SMTK5UYQYM4A8",
       features: [
-        "Everything in Ignite",
+        "Everything in Executive",
         "500 tailored applications",
         "Priority job matching",
         "Advanced analytics & insights",
