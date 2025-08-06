@@ -6,16 +6,18 @@ import EmployerForm from '../components/EmployerForm.jsx';
 type Props = {
   setSignupFormVisibility: React.Dispatch<React.SetStateAction<boolean>>;
   setCalendlyModalVisibility: React.Dispatch<React.SetStateAction<boolean>>;
+  setEmployerFormVisibility: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const Navigation: React.FC<Props> = ({
   setSignupFormVisibility,
   setCalendlyModalVisibility,
+  setEmployerFormVisibility,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const [employerFormVisibility, setEmployerFormVisibility] = useState(false);
+  // const [employerFormVisibility, setEmployerFormVisibility] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -105,15 +107,15 @@ const Navigation: React.FC<Props> = ({
 
 
 
-            {/* <div className="hidden md:block">
+            <div className="hidden md:block">
               <button
                 onClick={()=>setEmployerFormVisibility(true)}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-full font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 text-sm lg:text-base"
+                className="font-medium text-gray-700 transition-colors rounded-2xl  duration-200 hover:text-orange-600 text-sm lg:text-base"
               >
-                Are you an Employer?
+                Employer?
               </button>
             </div>
-            {employerFormVisibility && (
+            {/* {employerFormVisibility && (
                       <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
                         <div className="relative w-full max-w-4xl mx-4 sm:mx-auto bg-white rounded-2xl shadow-2xl overflow-y-auto max-h-[90vh]">
                           <button

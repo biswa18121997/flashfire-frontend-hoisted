@@ -20,7 +20,7 @@ import CalendlyModal from './components/CalendlyModal.tsx';
 function App() {
   const [signupFormVisibility, setSignupFormVisibility] = useState(false);
   const [calendlyModalVisibility, setCalendlyModalVisibility] = useState(false);
-
+  const [employerFormVisibility, setEmployerFormVisibility] = useState(false);
   return (
     <div className="min-h-screen bg-white">
       {/* <Navigation setSignupFormVisibility={setSignupFormVisibility} setCalendlyModalVisibility={setCalendlyModalVisibility} /> */}
@@ -37,7 +37,7 @@ function App() {
       {/* {signupFormVisibility && <SignupForm setSignupFormVisibility={setSignupFormVisibility} />} */}
       {/* {calendlyModalVisibility && <CalendlyModal setCalendlyModalVisibility={setCalendlyModalVisibility} />} */}
       {/* <Footer /> */}
-      <Outlet context={{signupFormVisibility,calendlyModalVisibility, setSignupFormVisibility, setCalendlyModalVisibility }} />
+      <Outlet context={{signupFormVisibility,calendlyModalVisibility, setSignupFormVisibility, setCalendlyModalVisibility ,employerFormVisibility,setEmployerFormVisibility}} />
     </div>
   );
 }
