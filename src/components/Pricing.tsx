@@ -188,13 +188,13 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: "Executive",
+      name: "Ignite",
       icon: <Zap className="w-6 h-6" />,
       applications: "250",
       price: "$199",
       originalPrice: "$299",
       popular: false,
-      description: "Perfect for entry-level professionals",
+      description: "For senior professionals & executives",
       paymentLink: "https://www.paypal.com/ncp/payment/F6CESAWAYUYU2",
       features: [
         "AI-powered job matching",
@@ -215,7 +215,7 @@ const Pricing = () => {
       description: "Most popular for mid-level professionals",
       paymentLink: "https://www.paypal.com/ncp/payment/SMTK5UYQYM4A8",
       features: [
-        "Everything in Executive",
+        "Everything in Ignite",
         "500 tailored applications",
         "Priority job matching",
         "Advanced analytics & insights",
@@ -226,14 +226,14 @@ const Pricing = () => {
       cta: "Start Now"
     },
     {
-      name: "Ignite",
+      name: "Executive",
       icon: <Rocket className="w-6 h-6" />,
       applications: "1000",
       price: "$599",
       originalPrice: "$699",
       popular: false,
       badge: "Best Value",
-      description: "For senior professionals & executives",
+       description: "Perfect for entry-level professionals",
       paymentLink: "https://www.paypal.com/ncp/payment/CDRFGB6M566X8",
       features: [
         "Everything in Professional",
