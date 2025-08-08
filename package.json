@@ -13,9 +13,11 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "lucide-react": "^0.344.0",
+    "pdfjs-dist": "^5.4.54",
     "react": "^18.3.1",
     "react-calendly": "^4.4.0",
     "react-dom": "^18.3.1",
+    "react-pdf": "^10.0.1",
     "react-router-dom": "^7.6.3"
   },
   "devDependencies": {
