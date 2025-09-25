@@ -17,17 +17,28 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  //  useEffect(() => {
-  //   const id = window.location.hash.slice(1);
-  //   if (!id) return;
-  //   const el = document.getElementById(id);
-  //   if (el) {
-  //     // let layout settle
-  //     setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
-  //   }
-  // }, []);
-  
-  // Smooth-scroll to hash targets when path is '/#section'
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get("ref");
+
+  if (ref) {
+    const payload = {
+      ref,
+      userAgent: navigator.userAgent,
+      screenWidth: window.screen.width,
+      screenHeight: window.screen.height,
+      language: navigator.language,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    };
+
+    fetch("http://localhost:8086/api/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch((err) => console.error("Tracking failed:", err));
+  }
+}, []);
+
   useEffect(() => {
     const tryScrollToHash = () => {
       if (location.hash) {
