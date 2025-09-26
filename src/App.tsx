@@ -17,7 +17,7 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
+ useEffect(() => {
   const params = new URLSearchParams(window.location.search);
   const ref = params.get("ref");
 
@@ -31,13 +31,25 @@ function App() {
       timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     };
 
-    fetch("http://localhost:8086/api/track", {
+    fetch("https://utm-track-backend.onrender.com/api/track", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
-    }).catch((err) => console.error("Tracking failed:", err));
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.ok) {
+          console.log("UTM Source:", data.utm_source); // ✅ campaigner name
+          setCalendlyUser(data.utm_source);
+          // You can store it in state or context
+        } else {
+          console.warn("Tracking error:", data.message || data.error);
+        }
+      })
+      .catch((err) => console.error("Tracking failed:", err));
   }
 }, []);
+
 
   useEffect(() => {
     const tryScrollToHash = () => {
