@@ -39,8 +39,8 @@ function CalendlyModal({ setCalendlyModalVisibility, user }: { setCalendlyModalV
 
   
 };
-const params = new URLSearchParams(window.location.search);
-const utmSource = params.get("utm_source") || "webpage_visit";
+// const params = new URLSearchParams(window.location.search);
+// const utmSource = params.get("utm_source") || "webpage_visit";
 
   useEffect(() => {
     // Hide loading after 5 seconds as fallback
@@ -88,7 +88,7 @@ const utmSource = params.get("utm_source") || "webpage_visit";
               </div>
             )}
             <InlineWidget
-              url = {`https://calendly.com/biswajitclean/30min?utm_source=${utmSource}`}
+              url = {`https://calendly.com/biswajitclean/30min?utm_source=${localStorage.getItem("utm_source") || "webpage_visit"}`}
               // url=  "https://calendly.com/feedback-flashfire/30min"
               prefill={{
     name: user?.fullName || "",
@@ -197,7 +197,7 @@ const utmSource = params.get("utm_source") || "webpage_visit";
               </div>
             )}
             <InlineWidget
-              url = {`https://calendly.com/biswajitclean/30min?utm_source=${utmSource}`}
+              url = {`https://calendly.com/biswajitclean/30min?utm_source=${localStorage.getItem("utm_source") || "webpage_visit"}`}
               // url="https://calendly.com/feedback-flashfire/30min"
               prefill={{
     name: user?.fullName || "",

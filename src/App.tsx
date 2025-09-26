@@ -39,8 +39,9 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         if (data.ok) {
-          console.log("UTM Source:", data.utm_source); // ✅ campaigner name
-          setCalendlyUser(data.utm_source);
+          console.log("UTM Source:", data.utm_source); // ✅ campaigner 
+          localStorage.setItem("utm_source", data.utm_source);
+          //setCalendlyUser(data.utm_source);
           // You can store it in state or context
         } else {
           console.warn("Tracking error:", data.message || data.error);
