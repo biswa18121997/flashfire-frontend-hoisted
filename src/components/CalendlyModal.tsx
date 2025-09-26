@@ -197,7 +197,7 @@ const utmSource = params.get("utm_source") || "webpage_visit";
               </div>
             )}
             <InlineWidget
-              url="https://calendly.com/biswajitclean/30min"
+              url = {`https://calendly.com/biswajitclean/30min?utm_source=${utmSource}`}
               // url="https://calendly.com/feedback-flashfire/30min"
               prefill={{
     name: user?.fullName || "",
