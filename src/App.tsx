@@ -62,12 +62,12 @@ function App() {
   }, [location.pathname, location.hash]);
 
 
-    useEffect(() => {
-      setTimeout(()=>
-      // setSignupFormVisibility(true)
-      navigate('/signup')
-      ,10000);
-    }, []);
+    // useEffect(() => {
+    //   setTimeout(()=>
+    //   // setSignupFormVisibility(true)
+    //   navigate('/signup')
+    //   ,10000);
+    // }, []);
     // const location = useLocation();
   
   useEffect(() => {
